@@ -5,40 +5,6 @@ grab video and audio frames from media stream in the nodejs addon enviroment.  t
 
 index.js
 
-`const lib = require('./build/Release/Decode.node')`
-
-`// utils`
-
-`function sleep(t) {`
-
-​    `var start = new Date().getTime();`
-
-​    `while (true) {`
-
-​        `if (new Date().getTime() - start > t) {`
-
-​            `break;`
-
-​        `}`
-
-​    `}`
-
-`}`
-
-
-
-`function doSomething() {`
-
-​    `for (let i = 0; i < 10; i++) {`
-
-​        `sleep(500)`
-
-​        `console.log('current time in node,', new Date().getTime());`
-
-​    `}`
-
-`}`
-
 `//========================================================================================`
 
 `//                          Example OF Grabbing VIDEO and AUDIO`
