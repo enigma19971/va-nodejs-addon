@@ -1,6 +1,8 @@
 "# va-nodejs-addon"
 
 该代码的运行环境为 ubuntu ， 目前不支持 windows 系统， 如果需要 windows 版本， 可联系作者 contact wechat 714601476。
+浏览 index.js
+
 
 首先， 导入 node 扩展程序。
 
