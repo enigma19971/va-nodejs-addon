@@ -3,7 +3,7 @@ grab video and audio frames from media stream in the nodejs addon enviroment.  t
 
 该代码的运行环境为 ubuntu ， 目前不支持 windows 系统， 如果需要 windows 版本， 可联系作者 contact ***wechat  714601476***。
 
-index.js
+Example: index.js
 
 `//========================================================================================`
 
