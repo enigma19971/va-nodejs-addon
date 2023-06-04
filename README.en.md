@@ -1,6 +1,8 @@
 
 The running environment of this code is ubuntu, currently does not support windows system, if you need windows version, please contact the author contact wechat 714601476.
 
+Browse index.js
+
 First, import the node extension.
 
 step1: initialize lib. Call the Open function.
