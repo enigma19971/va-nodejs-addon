@@ -15,3 +15,8 @@
 第四步， 你可以运行自己的工作， 因为底层自己开发了线程处理数据流的接受和解码。并不会阻塞 JS 端的运行。
 
 最后， 可以关闭 LIB 的功能，释放资源。
+
+
+sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
+
+
