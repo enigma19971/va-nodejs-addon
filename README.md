@@ -5,63 +5,58 @@ grab video and audio frames from media stream in the nodejs addon enviroment.  t
 
 Example: index.js
 
-`//========================================================================================`
-
-`//                          Example OF Grabbing VIDEO and AUDIO`
-
-`//========================================================================================`
-
-`//step 1: init the lib`
-
-`lib.Open()`
-
-
-
-`//step 2: set callbacks here, we support 'Video', 'Audio', 'Error' 3 msg types.`
-
-`lib.On('Video', (frame) => {`
-
-​    `console.log('#Video format=', frame.format);`
-
-​    `console.log('#Video width=', frame.width);`
-
-​    `console.log('#Video height=', frame.height);`
-
-​    `console.log('#Video size=', frame.size);`
-
-​    `// console.log(frame.data);`
-
-`})`
-
-`lib.On('Audio', (frame) => {`
-
-​    `console.log('#Audio format=', frame.format);`
-
-​    `console.log('#Audio rate=', frame.rate);`
-
-​    `console.log('#Audio size=', frame.size);`
-
-​    `// console.log(frame.data);`
-
-`})`
-
-`lib.On('Error', (msg) => {`
-
-​        `console.log('#5', msg);`
-
-​    `})`
-
-`//step 3: set uri, and begin to grab video and audio frames`
-
-`lib.SetUri('https://sf1-hscdn-tos.pstatp.com/obj/media-fe/xgplayer_doc_video/flv/xgplayer-demo-360p.flv'); // can change to your own rtmp` 
-
-`//step 4: you can your own work` 
-
-`doSomething();`
-
-`//step 5: finish`
-
-`lib.Close()`
+```
+const lib = require('./build/Release/Decode.node')
+// utils
+function sleep(t) {
+    var start = new Date().getTime();
+    while (true) {
+        if (new Date().getTime() - start > t) {
+            break;
+        }
+    }
+}
+ 
+function doSomething() {
+    for (let i = 0; i < 10; i++) {
+        sleep(500)
+        console.log('current time in node,', new Date().getTime());
+    }
+}
+ 
+ 
+//========================================================================================
+//                          Example OF Grabbing VIDEO and AUDIO
+//========================================================================================
+//step 1: init the lib
+lib.Open()
+ 
+//step 2: set callbacks here, we support 'Video', 'Audio', 'Error' 3 msg types.
+lib.On('Video', (frame)=>{
+    console.log('#Video format=',frame.format);
+    console.log('#Video width=',frame.width);
+    console.log('#Video height=',frame.height);
+    console.log('#Video size=',frame.size);
+    // console.log(frame.data);
+})
+lib.On('Audio', (frame)=>{
+    console.log('#Audio format=',frame.format);
+    console.log('#Audio rate=',frame.rate);
+    console.log('#Audio size=',frame.size);
+    // console.log(frame.data);
+})
+lib.On('Error', (msg)=>{
+    console.log('#5',msg);    
+})
+//step 3: set uri, and begin to grab video and audio frames
+lib.SetUri('https://sf1-hscdn-tos.pstatp.com/obj/media-fe/xgplayer_doc_video/flv/xgplayer-demo-360p.flv');  // can change to your own rtmp 
+ 
+//step 4: you can your own work 
+doSomething();
+ 
+//step 5: finish
+lib.Close()
+```
 
 
 首先， 导入 node 扩展程序。
@@ -79,6 +74,6 @@ Example: index.js
 
 注意： 本项目基于gstreamer开发， 如果在使用过程中，碰到plugin找不到的情况，请自行安装gstreamer.
 
-`sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio`
+```sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio```
 
 
